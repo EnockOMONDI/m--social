@@ -1,0 +1,285 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+
+
+<!-- //Modal2 -->
+<!-- /banner_bottom_agile_info -->
+<div class="page-head_agile_info_w3l">
+		<div class="container">
+			<h3>C<span>ontact Us </span></h3>
+			<!--/w3_short-->
+				 <div class="services-breadcrumb">
+						<div class="agile_inner_breadcrumb">
+
+						   <ul class="w3_short">
+								<li><a href="{% url 'shop:home' %}">Home</a><i>|</i></li>
+								<li>Contact</li>
+							</ul>
+						 </div>
+				</div>
+	   <!--//w3_short-->
+	</div>
+</div>
+   <!--/contact-->
+    <div class="banner_bottom_agile_info">
+	    <div class="container">
+		  <div class="contact-grid-agile-w3s">
+				<div class="col-md-4 contact-grid-agile-w3">
+						<div class="contact-grid-agile-w31">
+							<i class="fa fa-map-marker" aria-hidden="true"></i>
+							<h4>Address</h4>
+							<p>Greenfields <span>Nairobi , Kenya</span></p>
+						</div>
+					</div>
+					<div class="col-md-4 contact-grid-agile-w3">
+						<div class="contact-grid-agile-w32">
+							<i class="fa fa-phone" aria-hidden="true"></i>
+							<h4>Call Us</h4>
+							<p>+254 723615755<span>+254 726830125</span></p>
+						</div>
+					</div>
+					<div class="col-md-4 contact-grid-agile-w3">
+						<div class="contact-grid-agile-w33">
+							<i class="fa fa-envelope-o" aria-hidden="true"></i>
+							<h4>Email</h4>
+							<p><a href="mailto:info@example.com">info@curioeffect.com</a><span><a href="mailto:info@example.com">sean@curioeffect.com</a></span></p>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+	   </div>
+	 </div>
+
+  
+				<div class="clearfix"> </div>
+			</div>
+       </div>
+	</div>
+ <!--//contact-->
+<!--/grids-->
+
+<!--grids-->
+<!-- footer -->
+
+	<!-- Footer Section Start -->
+	<footer class="footer--section">
+			<!-- Footer Widgets Start -->
+			<div class="footer--widgets pt--70 pb--20 bg-lightdark" data-bg-img="img/footer-img/footer-widgets-bg.png">
+				<div class="container">
+					<div class="row AdjustRow">
+						<div class="col-md-3 col-xs-6 col-xxs-12 pb--60">
+							<!-- Widget Start -->
+							<div class="widget">
+								<h2 class="h4 fw--700 widget--title">About Us</h2>
+	
+								<!-- Text Widget Start -->
+								<div class="text--widget">
+									<p>Ipsum is simply dummy text of the printing indusLorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	
+									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+								</div>
+								<!-- Text Widget End -->
+							</div>
+							<!-- Widget End -->
+	
+										 <!-- Widget Start -->
+										 <div class="widget">
+												<h2 class="h4 fw--700 widget--title">Subscribe To Our Newsletter</h2>
+				
+												<!-- Newsletter Widget Start -->
+												<div class="newsletter--widget style--1" data-form="validate">
+													<!-- <form action="https://themelooks.us13.list-manage.com/subscribe/post?u=79f0b132ec25ee223bb41835f&amp;id=f4e0e93d1d" method="post" name="mc-embedded-subscribe-form" target="_blank"> -->
+														<form  action="{%url 'shop:newsletter'%}" method="post"></form>
+														{%csrf_token%}
+														<div class="input-group">
+															<input type="email" name="EMAIL" placeholder="Enter your emil address" class="form-control" autocomplete="off" required>
+				
+															<div class="input-group-btn">
+																	<button type="submit" class="btn-link"><i class="fa fa-send-o"></i></button>
+															</div>
+														</div>
+													</form>
+												</div>
+												<!-- Newsletter Widget End -->
+											</div>
+											<!-- Widget End -->
+										</div>
+				
+										<div class="col-md-3 col-xs-6 col-xxs-12 pb--60">
+											<!-- Widget Start -->
+											<div class="widget">
+												<h2 class="h4 fw--700 widget--title">Recent Post</h2>
+				
+												<!-- Recent Posts Widget Start -->
+												<div class="recent-posts--widget">
+													<ul class="nav">
+														<li>
+															<p class="date fw--300">
+																<a href="#"><i class="fa mr--8 fa-file-text-o"></i>19 Jan 2019</a>
+															</p>
+															<p class="title fw--700">
+																<a href="blog-details.html">looking for  poultry frmers group to join</a>
+															</p>
+														</li>
+														<li>
+															<p class="date fw--300">
+																<a href="#"><i class="fa mr--8 fa-file-text-o"></i>19 Jan 2019</a>
+															</p>
+															<p class="title fw--700">
+																<a href="blog-details.html">what are the most effective marketing ideas</a>
+															</p>
+														</li>
+														<li>
+															<p class="date fw--300">
+																<a href="#"><i class="fa mr--8 fa-file-text-o"></i>19 Jan 2017</a>
+															</p>
+															<p class="title fw--700">
+																<a href="blog-details.html">2019 waiting for the goverments budget</a>
+															</p>
+														</li>
+													</ul>
+												</div>
+												<!-- Recent Posts Widget End -->
+											</div>
+											<!-- Widget End -->
+				
+											<!-- Widget Start -->
+											<div class="widget">
+												<h2 class="h4 fw--700 widget--title">Tags</h2>
+				
+												<!-- Tags Widget Start -->
+												<div class="tags--widget">
+													<ul class="nav">
+														<li><a href="#">Farming</a></li>
+														<li><a href="#">Politics</a></li>
+														<li><a href="#">Music</a></li>
+														<li><a href="#">Technology</a></li>
+														<li><a href="#">kenya</a></li>
+														<li><a href="#">Photography</a></li>
+														<li><a href="#">Gumzoclub</a></li>
+													</ul>
+												</div>
+												<!-- Tags Widget End -->
+											</div>
+											<!-- Widget End -->
+										</div>
+				
+										<div class="col-md-3 col-xs-6 col-xxs-12 pb--60">
+											<!-- Widget Start -->
+											<div class="widget">
+												<h2 class="h4 fw--700 widget--title">Some of Catagories</h2>
+				
+												<!-- Nav Widget Start -->
+												<div class="nav--widget">
+													<ul class="nav">
+														<li>
+															<a href="#">
+																<i class="fa fa-folder-o"></i>
+																<span class="text">Farming</span>
+																<span class="count">(26)</span>
+															</a>
+														</li>
+														<li>
+															<a href="#">
+																<i class="fa fa-folder-o"></i>
+																<span class="text">volunteer work</span>
+																<span class="count">(06)</span>
+															</a>
+														</li>
+														<li>
+															<a href="#">
+																<i class="fa fa-folder-o"></i>
+																<span class="text">Services</span>
+																<span class="count">(34)</span>
+															</a>
+														</li>
+													</ul>
+												</div>
+												<!-- Nav Widget End -->
+											</div>
+											<!-- Widget End -->
+				
+											<!-- Widget Start -->
+											<div class="widget">
+												<h2 class="h4 fw--700 widget--title">From Archives</h2>
+				
+												<!-- Nav Widget Start -->
+												<div class="nav--widget">
+													<ul class="nav">
+														<li>
+															<a href="#">
+																<i class="fa fa-calendar-o"></i>
+																<span class="text">Jan - July 2017</span>
+																<span class="count">(86)</span>
+															</a>
+														</li>
+														<li>
+															<a href="#">
+																<i class="fa fa-calendar-o"></i>
+																<span class="text">Jan - Dce 2016</span>
+																<span class="count">(328)</span>
+															</a>
+														</li>
+														<li>
+															<a href="#">
+																<i class="fa fa-calendar-o"></i>
+																<span class="text">Jan - Dec 2015</span>
+																<span class="count">(427)</span>
+															</a>
+														</li>
+													</ul>
+												</div>
+												<!-- Nav Widget End -->
+											</div>
+											<!-- Widget End -->
+										</div>
+				
+										<div class="col-md-3 col-xs-6 col-xxs-12 pb--60">
+											<!-- Widget Start -->
+											<div class="widget">
+												<h2 class="h4 fw--700 widget--title">Forums</h2>
+				
+												<!-- Links Widget Start -->
+												<div class="links--widget">
+													<ul class="nav">
+														<li><a href="sub-forums.html">Best farming practices in Nairobi</a></li>
+														<li><a href="sub-forums.html">Poultry farmers</a></li>
+														<li><a href="sub-forums.html">Communities to join</a></li>
+														<li><a href="sub-forums.html">Social Media Marketing</a></li>
+														<li><a href="sub-forums.html">Product Marketing</a></li>
+													</ul>
+												</div>
+												<!-- Links Widget End -->
+											</div>
+											<!-- Widget End -->
+				
+											<!-- Widget Start -->
+											<div class="widget">
+												<h2 class="h4 fw--700 widget--title">Useful Links</h2>
+				
+												<!-- Links Widget Start -->
+												<div class="links--widget">
+													<ul class="nav">
+														<li><a href="#">Register</a></li>
+														<li><a href="#">Gumzo club</a></li>
+														<li><a href="#">Membership </a></li>
+														<li><a href="#">Shop</a></li>
+														<li><a href="#">Contact members</a></li>
+													</ul>
+												</div>
+												<!-- Links Widget End -->
+											</div>
+											<!-- Widget End -->
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Footer Widgets End -->
+
+
+  {% endblock %}

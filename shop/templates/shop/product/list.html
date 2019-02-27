@@ -1,0 +1,96 @@
+{% extends 'shop/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    {% if category %}{{ category.name }} {% else %} GUMZO | SOKO {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="top_nav_right">
+  <div class="box_1">
+
+    {% with totail_items=cart|length %}
+      {% if cart|length > 0 %}
+        My Shopping Order:
+        <a href="{% url 'cart:cart_detail' %}" >
+          {{ totail_items }} <button type="button" class="btn btn-primary btn-lg">item {{ totail_items|pluralize }}, Kshs. {{ cart.get_total_price }}</button>
+        </a>
+        {% else %}
+        Your cart is empty.  {{ totail_items }}  {{ totail_items|pluralize }}, Kshs. {{ cart.get_total_price }}
+      {% endif %}
+    {% endwith %}
+
+      </div>
+  </div>
+   <div class="container-fluid">
+      <div class="row" style="margin-top: 0%">
+        <div class="col-sm-3 " >
+          <br>
+          <div class="css-treeview" style=" box-shadow: 1px 5px 4px rgba(0, 0, 0, 0.3);">
+    				<h4>Categories</h4>
+            	<ul class="tree-list-pad">
+              <li {% if not category %} class="active"{% endif %}><a href="{% url 'shop:product_list' %}">All</a></li>
+            {% for c in categories %}
+
+              <li {% if category.slug == c.slug %} class="active"{% endif %}>
+                  <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+          </div>
+        </div><!-- /.blog-sidebar -->
+        <div class="tab2">
+          {% for product in products %}
+           <div class="col-md-2 product-men">
+            <div class="men-pro-item simpleCart_shelfItem">
+              <div class="men-thumb-item">
+                <img src="{% if product.image %} {{ product.image.cdn_url }} {% else %} {% static 'img/default.png' %} {% endif %}"  alt="" class="pro-image-front">
+                <img src="{% if product.image %} {{ product.image.cdn_url }} {% else %} {% static 'img/default.png' %} {% endif %}"  alt="" class="pro-image-back">
+                  <div class="men-cart-pro">
+                    <div class="inner-men-cart-pro">
+                      <a href="{{ product.get_absolute_url }}" class="link-product-add-cart">Quick View</a>
+                    </div>
+                  </div>
+                  
+              </div>
+              <div class="item-info-product ">
+                <h4><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h4>
+                <div class="info-product-price">
+                  <span class="item_price">Kshs. {{ product.price }}</span>
+
+                </div>
+                <!--  -->
+                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+
+                                <a href="{{ product.get_absolute_url }}"><input type="submit" name="submit" value="Add to cart" class="button" />
+                                </a>
+                          </div>
+              </div>
+            </div>
+          </div>
+  {% endfor %}
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="row">
+      {% if products%}
+      {% else %}
+        <h1><strong>sorry </strong>nothing found in selected category .</h1>
+        <h3> <a href="{% url 'shop:contact' %}">contact</a> us if you wish to sell products on gumzo soko</h3>
+        <h4>or kindly visit this page soon to find items</h4>
+        <h5><a href="{% url 'shop:product_list' %}">continue shopping</a></h5>
+        <br>
+        
+      {% endif %}
+  
+    </div>
+  <a href="{% url 'shop:product_list' %}" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+    </div>
+  </div>
+</div>
+{% endblock %}

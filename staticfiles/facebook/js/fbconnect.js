@@ -1,0 +1,1 @@
+/usr/local/lib/python3.6/dist-packages/allauth/socialaccount/providers/facebook/static/facebook/js/fbconnect.js
