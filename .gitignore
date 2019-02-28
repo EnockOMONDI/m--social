@@ -2,4 +2,3 @@ virtual/
 .env
 *.pyc
 __pycache__
-static/* linguist-vendored
