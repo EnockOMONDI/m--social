@@ -96,8 +96,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'msocialdb',
-        'USER': 'lucy',
-    'PASSWORD':'lucy',
+        'USER': 'sean',
+    'PASSWORD':'Aggreyomondi90',
     }
 }
 DATABASES['default'].update(db_from_env)
