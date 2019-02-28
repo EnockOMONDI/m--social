@@ -1,3 +1,2 @@
 
-*.css linguist-language=PYTHON
-jquery.js linguist-vendored=false
+static/* linguist-vendored
