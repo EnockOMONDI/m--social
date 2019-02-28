@@ -69,10 +69,9 @@ class Subcounty(models.Model):
 class Profile(models.Model):
     profilePic = models.ImageField(upload_to='profile/',null=True,blank=True)
     bio = models.CharField(max_length=60,blank=True)
-    last_active = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User,on_delete=models.CASCADE)
-    County = models.ForeignKey(County,on_delete=models.CASCADE)
-    Subcounty = models.ForeignKey(Subcounty,on_delete=models.CASCADE)
+    County = models.ForeignKey(County,on_delete=models.SET_NULL, null=True)
+    Subcounty = models.ForeignKey(Subcounty,on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.bio

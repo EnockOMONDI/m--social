@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import NewsLetterForm
 from django.http import HttpResponse, Http404,HttpResponseRedirect
 from .email import send_welcome_email
+from .models import Image,Profile,Comment
 
 @login_required(login_url='/accounts/login/')
 def product_list(request, category_slug=None):
@@ -32,11 +33,24 @@ def product_detail(request, id, slug):
     }
     return render(request, 'shop/product/detail.html', context)
 
+@login_required(login_url='/accounts/login/')
+def profile(request):
+    title = 'Gumzo |profile'
+    current_user = request.user
+    profile = Profile.get_profile()
+    image = Image.get_images()
+    comments = Comment.get_comment()
+    return render(request,'shop/product/profile.html',{"title":title,
+                                                  "comments":comments,
+                                                  "image":image,
+                                                  "user":current_user,
+                                                  "profile":profile,})
+
 
 
 def home(request):
   return render(request, 'shop/product/home.html')
-
+  
 def about(request):
   return render(request, 'shop/product/about.html')
 

@@ -9,6 +9,7 @@ app_name = 'shop'
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
+    url(r'^profile/',views.profile, name='profile'),
     url(r'^about/', views.about, name='about'),
     url(r'^notfound/', views.notfound, name='notfound'),
     url(r'^contact/', views.contact, name='contact'),
