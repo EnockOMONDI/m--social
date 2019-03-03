@@ -3,7 +3,7 @@
 ![most popular groups](3landing.png)
 ![Members](2landing.png)
 
-# MULTI SOCIAL PLATFORM (currio effect)
+# MULTI SOCIAL PLATFORM (gumzo club)
 #### multi-purpose social platform with an eCommerce integrated (connect,create forums/groups, sell your products etc)
 
 #### By ****Enock OMONDI****
