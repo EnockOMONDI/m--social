@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^about/', views.about, name='about'),
     url(r'^notfound/', views.notfound, name='notfound'),
     url(r'^contact/', views.contact, name='contact'),
+    url(r'^edit/', views.edit, name='edit'),
     url(r'^newsletter/', views.newsletter, name='newsletter'),
     url(r'^shop/', views.product_list, name='product_list'),
     url(r'^(?P<category_slug>[-\w]+)/$', views.product_list, name='product_list_by_category'),

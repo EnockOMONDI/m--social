@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render,redirect,get_object_or_404
 from .models import Category, Product
 from cart.forms import CartAddProductForm
 from django.contrib.auth.decorators import login_required
@@ -6,6 +6,8 @@ from .forms import NewsLetterForm
 from django.http import HttpResponse, Http404,HttpResponseRedirect
 from .email import send_welcome_email
 from .models import Image,Profile,Comment
+from .forms import EditProfileForm
+from django.contrib.auth.models import User
 
 @login_required(login_url='/accounts/login/')
 def product_list(request, category_slug=None):
@@ -40,13 +42,27 @@ def profile(request):
     profile = Profile.get_profile()
     image = Image.get_images()
     comments = Comment.get_comment()
-    return render(request,'shop/product/profile.html',{"title":title,
+    return render(request,'shop/profile/profile.html',{"title":title,
                                                   "comments":comments,
                                                   "image":image,
                                                   "user":current_user,
                                                   "profile":profile,})
 
-
+@login_required(login_url='/accounts/login/')
+def edit(request):
+    title = 'Gumzo | edit profile'
+    current_user = request.user
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST,request.FILES)
+        if form.is_valid():
+            update = form.save(commit=False)
+            update.user = current_user
+            update.save()
+            return redirect('profile')
+    else:
+        form = EditProfileForm()
+    return render(request,'shop/profile/edit.html',{"title":title,
+                                                "form":form})
 
 def home(request):
   return render(request, 'shop/product/home.html')
