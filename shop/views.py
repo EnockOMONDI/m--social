@@ -64,6 +64,12 @@ def edit(request):
     return render(request,'shop/profile/edit.html',{"title":title,
                                                 "form":form})
 
+def error_404(request):
+        data = {}
+        return render(request,'shop/error_404.html', data)
+
+                                               
+
 def home(request):
   return render(request, 'shop/product/home.html')
   
