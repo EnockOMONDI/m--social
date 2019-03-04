@@ -52,6 +52,9 @@ class Product(models.Model):
 
 class County(models.Model):
     name = models.CharField(max_length=60)
+  
+
+   
 
 
     def __str__(self):
@@ -61,6 +64,7 @@ class County(models.Model):
 class Subcounty(models.Model):
     County = models.ForeignKey(County,on_delete=models.CASCADE)
     name = models.CharField(max_length=60)
+  
 
 
     def __str__(self):
