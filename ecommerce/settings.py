@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'msocialdb',
+        'NAME': 'gumzo',
         'USER': 'sean',
     'PASSWORD':'Aggreyomondi90',
     }

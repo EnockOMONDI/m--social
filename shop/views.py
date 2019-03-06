@@ -5,9 +5,10 @@ from django.contrib.auth.decorators import login_required
 from .forms import NewsLetterForm
 from django.http import HttpResponse, Http404,HttpResponseRedirect
 from .email import send_welcome_email
-from .models import Image,Profile,Comment
+from .models import Image,Profile,Comment,County
 from .forms import EditProfileForm
 from django.contrib.auth.models import User
+
 
 @login_required(login_url='/accounts/login/')
 def product_list(request, category_slug=None):
@@ -47,7 +48,6 @@ def profile(request):
                                                   "image":image,
                                                   "user":current_user,
                                                   "profile":profile,})
-
 @login_required(login_url='/accounts/login/')
 def edit(request):
     title = 'Gumzo | edit profile'
@@ -63,6 +63,7 @@ def edit(request):
         form = EditProfileForm()
     return render(request,'shop/profile/edit.html',{"title":title,
                                                 "form":form})
+
 
 def error_404(request):
         data = {}
@@ -105,4 +106,6 @@ def newsletter(request):
       else:
         form = NewsLetterForm()
       return render(request, 'shop/product/contact.html')
-    
+
+
+   

@@ -1,18 +1,8 @@
 /*
 
 [Main Stylesheet]
-
-Project     : SociFly - Multipurpose Social Network HTML5 Template
-Version     : 1.0
-Author      : ThemeLooks
-Author URI  : https://themeforest.net/user/themelooks
-
-
 NOTE:
 ------
-PLEASE DO NOT EDIT THIS CSS, YOU MAY NEED TO USE "custom.css" FILE FOR WRITING YOUR CUSTOM CSS.
-WE MAY RELEASE FUTURE UPDATES SO IT WILL OVERWRITE THIS FILE. IT'S BETTER AND SAFER TO USE "custom.css".
-
 
 [TABLE OF CONTENTS]
 
@@ -4778,7 +4768,7 @@ body.isScrolling #backToTop {
     11. COVER HEADER
 \*------------------------------------*/
 .cover--header.bg--img {
-    padding-top: 215px;
+    padding-top: 75px;
     color: #999;
     background-size: 100% 300px;
     background-position: center top;

@@ -52,31 +52,19 @@ class Product(models.Model):
 
 class County(models.Model):
     name = models.CharField(max_length=60)
-  
-
    
 
-
     def __str__(self):
         return self.name
 
 
-class Subcounty(models.Model):
-    County = models.ForeignKey(County,on_delete=models.CASCADE)
-    name = models.CharField(max_length=60)
-  
-
-
-    def __str__(self):
-        return self.name
-        
 class Profile(models.Model):
     profilePic = models.ImageField(upload_to='profile/',null=True,blank=True)
     bio = models.CharField(max_length=60,blank=True)
     user = models.ForeignKey(User,on_delete=models.CASCADE)
-    County = models.ForeignKey(County,on_delete=models.SET_NULL, null=True)
-    Subcounty = models.ForeignKey(Subcounty,on_delete=models.SET_NULL, null=True)
-
+    county = models.ForeignKey(County, on_delete=models.SET_NULL, null=True)
+    
+    
     def __str__(self):
         return self.bio
 
