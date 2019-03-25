@@ -58,7 +58,7 @@ def edit(request):
             update = form.save(commit=False)
             update.user = current_user
             update.save()
-            return redirect('profile')
+            return redirect('/profile')
     else:
         form = EditProfileForm()
     return render(request,'shop/profile/edit.html',{"title":title,
