@@ -1,44 +1,62 @@
 
 {% extends 'shop/base.html' %}
 
+
 {% block content %}
+
+{% load static %}
+
+{{block.super}}
 <!-- <br>
 <br>
 <br>
 <br>
 <br> -->
+
 <div class="social-btn text-center">
+      
+    {% if prof == prof.bio %}
+<p><b>{{user | title}}</b> New to gumzo club<a href="{% url 'shop:edit' %}" class="btn btn-info btn-sm" >  create a profile</a></p>
+    {% else %}
 <p><b>{{user | title}}</b> New to gumzo club<a href="{% url 'shop:edit' %}" class="btn btn-info btn-sm" >  create a profile</a>
+    {% endif %}
 <div>
+   
   <br>
-   <!-- Cover Header Start -->
-   <div class="cover--header pt--80 text-center" data-bg-img="static/img/avatar.png" data-overlay="0.6" data-overlay-color="white">
-    <div class="container">
-        <div class="cover--avatar online" data-overlay="0.3" data-overlay-color="primary">
-            <img src="static/img/avatar.png"alt="">
-        </div>
-
-        <div class="cover--user-name">
-                {% if prof.bio %}
-                <h2 class="h3 fw--600">{{prof.user.username}}</h2>
-                <p>{{prof.bio}}</p>
-            {% else %}
-                <h2 class="h3 fw--600">{{prof.user.username}}</h2>
-            {% endif %}
-          
-        </div>
-
-        <div class="cover--user-activity">
-            <p><i class="fa mr--8 fa-clock-o"></i>Active 1 year 9 monts ago</p>
-        </div>
-
-        <div class="cover--user-desc fw--400 fs--18 fstyle--i text-darkest">
-            <p>Hello everyone ! There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-        </div>
-    </div>
-</div>
-<!-- Cover Header End -->
-
-<!-- Page Wrapper Start -->
-
+  <br>
+ 
+      <!-- Cover Header Start -->
+           {% for prof in profile %}
+           {% if user.id == prof.user.id %}
+                    <div class="cover--avatar online" data-overlay="0.3" data-overlay-color="primary">
+                        {% if prof.profilePic %}
+                        <img src= "{{prof.profilePic.url}}"  alt="">
+                        {% else %}
+                        <img src= "{% static 'img/avatar.png' %}" alt="" >
+                        {% endif %}
+                    </div>
+    
+                    <div class="cover--user-name">
+                        {% if prof.bio %}
+                        <h2 class="h3 fw--600">{{prof.user.username}}</h2>
+                    </div>
+    
+                    <div class="cover--user-activity">
+                        <p><i class="fa mr--8 fa-clock-o">Location</i>{{prof.county}}</p>
+                    </div>
+    
+                    <div class="cover--user-desc fw--400 fs--18 fstyle--i text-darkest">
+                        <p>{{prof.bio}}</p>
+                    </div>
+                        {% else %}
+                        <h5>{{prof.user.username}}</h5>
+                        {% endif %}
+                        {% endif %}
+                        {% empty %}
+                </div>
+            {% endfor %}
+            <!-- Cover Header End -->
+    
+      
+    
 {% endblock %}
