@@ -133,6 +133,8 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
     'social_core.backends.twitter.TwitterOAuth',
     'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
+    
 
 )
 # Internationalization
@@ -177,7 +179,8 @@ LOGIN_REDIRECT_URL = '/profile/'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '405090666976239'  # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = 'd985573e740790f15db90d8969acb3b7'  # App Secret
-
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '734834555849-163o60b33j3gpvg6njohnp9ab2iorat3.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '7F20j826KczO-pudXEsY_czJ'
 # EMAIL_USE_TLS = config('EMAIL_USE_TLS')
 # EMAIL_HOST = config('EMAIL_HOST')
 # EMAIL_PORT = config('EMAIL_PORT')
