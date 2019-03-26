@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^logout/$', views.logout, {"next_page": '/'}),
+    url(r'^oauth/', include('social_django.urls', namespace='social')),  
     url('cart', include('cart.urls')),
     url('orders/', include('orders.urls')),
     url('', include('shop.urls')),

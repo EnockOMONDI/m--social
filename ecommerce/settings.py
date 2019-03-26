@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google', # new
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.twitter',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',  
 ]
 
 ROOT_URLCONF = 'ecommerce.urls'
@@ -81,6 +83,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'cart.context_processors.cart',
+                'social_django.context_processors.backends', 
+                'social_django.context_processors.login_redirect', 
                 # 'django.template.context_processors.i18n',
             ],
         },
@@ -127,6 +131,9 @@ AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
     # `allauth` specific authentication methods, such as login by e-mail
     "allauth.account.auth_backends.AuthenticationBackend",
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.facebook.FacebookOAuth2',
+
 )
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
@@ -167,6 +174,9 @@ CART_SESSION_ID = 'cart'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 LOGIN_REDIRECT_URL = '/profile/'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '405090666976239'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'd985573e740790f15db90d8969acb3b7'  # App Secret
 
 # EMAIL_USE_TLS = config('EMAIL_USE_TLS')
 # EMAIL_HOST = config('EMAIL_HOST')
