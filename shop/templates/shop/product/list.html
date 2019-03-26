@@ -1,3 +1,4 @@
+
 {% extends 'shop/base.html' %}
 
 {% load static %}
@@ -43,7 +44,7 @@
         </div><!-- /.blog-sidebar -->
         <div class="tab2">
           {% for product in products %}
-           <div class="col-md-2 product-men">
+           <div class="col-md-3 product-men">
             <div class="men-pro-item simpleCart_shelfItem">
               <div class="men-thumb-item">
                 <img src="{% if product.image %} {{ product.image.cdn_url }} {% else %} {% static 'img/default.png' %} {% endif %}"  alt="" class="pro-image-front">
@@ -81,7 +82,7 @@
         <h1><strong>sorry </strong>nothing found in selected category .</h1>
         <h3> <a href="{% url 'shop:contact' %}">contact</a> us if you wish to sell products on gumzo soko</h3>
         <h4>or kindly visit this page soon to find items</h4>
-        <h5><a href="{% url 'shop:product_list' %}">continue shopping</a></h5>
+        <h6><a href="{% url 'shop:product_list' %}">continue shopping</a></h6>
         <br>
         
       {% endif %}

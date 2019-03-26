@@ -1,0 +1,90 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>{% block title %} Gumzo | home{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no" />
+   
+<!--//tags -->
+
+
+   <link rel="stylesheet" href=" {% static 'homecss/styles.css' %} ">
+   <link rel="stylesheet" href=" {% static 'homecss/style.css' %} ">
+   <link rel="stylesheet" href=" {% static 'homecss/owl.carousel.css '%} " > 
+   <link rel="stylesheet" href=" {% static 'homecss/font-awsome.css '%} "> 
+   <link rel="stylesheet" href=" {% static 'homecss/form.css '%} ">
+   <link rel="stylesheet" href=" {% static 'homecss/ie.css '%} ">
+   <link rel="stylesheet" href=" {% static 'homecss/login.css '%} ">
+      
+   <link rel="stylesheet" href=" {% static 'homecss/reset.css '%} ">
+   <link rel="stylesheet" href=" {% static 'homecss/skeleton.css' %} ">
+  
+   <link rel="stylesheet" href=" {% static 'homecss/superfish.css '%} "> 
+  
+
+  <!-- ==== Plugins Bundle ==== -->
+
+
+    
+
+    		
+
+     
+		<script type="text/javascript" src="{% static 'homejs/js/jquery.js ' %}"></script>
+		<script type="text/javascript" src="{% static 'homejs/js/jquery-migrate-1.2.1.js ' %}"></script>
+		<script type="text/javascript" src="{% static 'homejs/js/script.js ' %}"></script>
+		<script type="text/javascript" src="{% static 'homejs/js/superfish.js ' %}"></script>
+		<script type="text/javascript" src="{% static 'homejs/js/jquery.ui.totop.js' %}"></script>
+		<script type="text/javascript" src="{% static 'homejs/js/jquery.equalheights.js' %}"></script>
+		<script type="text/javascript" src="{% static 'homejs/js/jquery.mobilemenu.js' %}"></script>
+		<script type="text/javascript" src="{% static 'homejs/js/jquery.easing.1.3.js' %}"></script>
+		<script type="text/javascript" src="{% static 'homejs/js/owl.carousel.js' %}"></script>
+		<script type="text/javascript" src="{% static 'homejs/js/camera.js' %}"></script>
+		<script type="text/javascript" src="{% static  'js/gumzomain.js' %}"></script> 
+		<!--[if (gt IE 9)|!(IE)]><!-->
+		<script src="{% static 'homejs/js/jquery.mobile.customized.min.js' %}"></script>
+		<!--<![endif]-->
+  
+
+    <script>
+      $(document).ready(function(){
+      jQuery('#camera_wrap').camera({
+        loader: false,
+        pagination: false ,
+        minHeight: '444',
+        thumbnails: false,
+        height: '48.375%',
+        caption: true,
+        navigation: true,
+        fx: 'mosaic'
+      });
+      /*carousel*/
+      var owl=$("#owl");
+        owl.owlCarousel({
+        items : 2, //10 items above 1000px browser width
+        itemsDesktop : [995,2], //5 items between 1000px and 901px
+        itemsDesktopSmall : [767, 2], // betweem 900px and 601px
+        itemsTablet: [700, 2], //2 items between 600 and 0
+        itemsMobile : [479, 1], // itemsMobile disabled - inherit from itemsTablet option
+        navigation : true,
+        pagination : false
+        });
+      $().UItoTop({ easingType: 'easeOutQuart' });
+      });
+  </script>
+</head>
+<body>
+
+{% block content %}
+
+
+{% endblock %}
+
+
+
+
+

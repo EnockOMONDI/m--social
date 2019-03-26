@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = config('DEBUG', default=True , cast=bool)
 ALLOWED_HOSTS = ['*']
 
 
@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'msocialdb',
+        'NAME': 'gumzo',
         'USER': 'sean',
     'PASSWORD':'Aggreyomondi90',
     }
