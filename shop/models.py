@@ -1,3 +1,4 @@
+
 from django.db import models
 from django.urls import reverse
 from pyuploadcare.dj.models import ImageField
@@ -148,5 +149,4 @@ class Comment(models.Model):
     def get_comment(cls):
         comment = Comment.objects.all()
         return comment
-
 
