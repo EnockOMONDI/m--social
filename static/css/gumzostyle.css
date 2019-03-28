@@ -1048,7 +1048,7 @@ label > span {
 /* 2.8. BACKGROUND COLORS */
 .bg-lighter { background-color: #f7f8f9; }
 .bg-default { background-color: #fff; }
-.bg-black { background-color: #000; }
+.bg-black { background-color: #444; }
 .bg-darkest { background-color: #222; }
 .bg-darker { background-color: #444; }
 .bg-dark { background-color: #333; }

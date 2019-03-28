@@ -201,18 +201,18 @@ WE MAY RELEASE FUTURE UPDATES SO IT WILL OVERWRITE THIS FILE. IT'S BETTER AND SA
     }
 
     .header--nav-links.style--2 > li {
-        margin-top: 5px;
+        margin-top: 2px;
     }
 
     .header--nav-links.style--3 > li + li {
-        margin-top: 7.5px;
+        margin-top: 5.5px;
     }
 
     .header--nav-links > li > a {
         margin-left: 0;
         margin-right: 0;
-        padding-top: 7.5px;
-        padding-bottom: 7.5px;
+        padding-top: 5.5px;
+        padding-bottom: 5.5px;
     }
 
     .header--nav-links.style--2 > li:hover > a:before,
