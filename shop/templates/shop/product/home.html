@@ -1,4 +1,4 @@
-{% extends 'shop/base.html' %}
+{% extends 'shop/basehome.html' %}
 
 {% load static %}
 
@@ -9,51 +9,69 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Welcome{% endblock %}</title>
-        <div class="site" id="page">
+</head>
+
+    
+
+
+<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#bs-carousel" data-slide-to="1"></li>
+    <li data-target="#bs-carousel" data-slide-to="2"></li>
+  </ol>
+  
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item slides active">
+      <div class="slide-1"></div>
+      <div class="hero">
+        <hgroup>
+            <h1>KAKAMEGA</h1>        
+            <h3>Get start your next awesome project</h3>
+        </hgroup>
+        <div class="social-btn ">
+        <button class="btn btn-primary btn-lg" role="button">LOGIN</button>
+        <button class="btn btn-primary btn-lg" role="button">SIGN UP</button>
+      </div>
+    </div>
+</div>
+    <div class="item slides">
+      <div class="slide-2"></div>
+      <div class="hero">        
+        <hgroup>
+            <h1>NAIROBI</h1>        
+            <h3>Get start your next awesome project</h3>
+        </hgroup>   
+        <div class="social-btn "> 
+        <button class="btn btn-primary btn-lg" role="button">LOGIN</button>
+        <button class="btn btn-primary btn-lg" role="button">SIGN UP</button>
+      </div>
+    </div>
+</div>
+    <div class="item slides">
+      <div class="slide-3"></div>
+      <div class="hero">        
+        <hgroup>
+            <h1>MOMBASA</h1>        
+            <h3>Get start your next awesome project</h3>
+        </hgroup>
+        <div class="social-btn ">
+        <button class="btn btn-primary btn-lg" role="button">LOGIN</button>
+        <button class="btn btn-primary btn-lg" role="button">SIGN UP</button>  
+    </div>
+</div>
+    </div>
+  </div> 
+</div>
+
+        
            
 
-            <section class="hero-section hero-section--slider clearfix">
-                <div class="hero-section__wrap">
-
-                    <!-- Options slick plugin: data-arrows="true/false" | data-dots="true/false" | data-fade="true/false" | data-autoplay="true/false/number" | data-speed="number" -->
-                    <div class="hero-section__option" data-init="slick" data-arrows="false" data-dots="true" data-fade="false" data-autoplay="2000" data-speed="2000">
-                        <img src="static/img/kisumu.jpg"  alt="Hero section image">
-                        <img src="static/img/nairobi.jpg"  alt="Hero section image">
-                        <img src="static/img/mombasa.jpg"  alt="Hero section image">
-                    </div>
-                    <!-- .hero-section__option -->
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="offset-lg-2 col-lg-8">
-                                <div class="title-01 title-01--11 text-center">
-									<h2 class="title__heading">GUMZO CLUB</h2>
-									<br>
-									<br>
-                                    <div class="title__description">Connect, Share &amp; Engage</div>											
-
-                                    <!-- Options btn color: .btn-success | .btn-info | .btn-warning | .btn-danger | .btn-primary -->
-                                    <div class="social-btn text-center"><a href="/accounts/login " class="btn btn-info btn-lg">log in</a></div>
-								   <br>
-									<div class="social-btn text-center"><a href="/accounts/register " class="btn btn-info btn-lg">sign up</a></div>
-                                </div>
-                                <!-- .title-01 -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-      
-                <!-- .hero-section__wrap -->
-            </section>
-            <!-- .hero-section -->
-        </div>
-
-
-        <!-- JS -->
-        <script src="assets/js/plugins/slick.min.js"></script>
-        <script src="assets/js/plugins/animate-headline.js"></script>
-        <script src="assets/js/main.js"></script>
-
+  
 
  {% endblock %}
