@@ -61,7 +61,7 @@ class County(models.Model):
 
 class Profile(models.Model):
     profilePic = models.ImageField(upload_to='profile/',null=True,blank=True)
-    bio = models.CharField(max_length=60,blank=True)
+    bio = models.CharField(max_length=150,blank=True)
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     county = models.ForeignKey(County, on_delete=models.SET_NULL, null=True)
     
